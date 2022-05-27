@@ -16,8 +16,11 @@
     <h1>Olá, mundo!</h1>
     <p>Já me livrei da maldição!</p>
     <script>
-        var nome = window.prompt('qual é o neu nome?') // Vai pergunta o nome...
-        window.alert('É um grade prazer te conhecer, '+nome+'!')
+        var n1 = Number.parseFloat(window.prompt('Digite um número: '))//o valor recebido da janela é uma string
+        var n2 = Number.parseFloat(window.prompt('Digite outro número: '))//pode se usar apenas o Number(numero)
+        var soma = n1 + n2
+
+        window.alert(`A soma entre ${n1} e ${n2} é: ${soma}`)
     </script>
 </body>
 </html>

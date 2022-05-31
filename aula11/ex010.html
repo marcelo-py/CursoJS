@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+    <style>
+        body{
+            font: normal 15pt arial;
+        }
+        input{
+            font-size: 15pt;
+        }
+    </style>
+</head>
+<body>
+    <h1>Controle de velocidade</h1>
+    <em style="display: block;">Velocidade maxima permitida é 60Km/h</em>
+    <label for="txtvel">Velocidade do carro: </label>
+    <input type="number" name="txtvel" id="txtvel">
+    <input type="button" value="Verificar" id="ver">
+
+    <p> </p>
+    <div class="situacao"><strong> Situação:</strong></div>
+    <script>
+        var velocidade = window.document.getElementById('txtvel')
+
+        var ver = window.document.getElementById('ver')
+        ver.addEventListener('click', verificar)
+        var sit = window.document.getElementsByClassName('situacao')[0]
+        var parag = window.document.getElementsByTagName('p')[0]
+
+        function verificar() {
+            parag.innerText = `Sua velocidade atual é de ${velocidade.value}Km/h`
+            if (Number(velocidade.value) > 60) {
+                sit.innerHTML += 'Acima da velocidade, MULTADO!'
+            } else {
+                sit.innerHTML += 'Tudo certo, Continue assim'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -8,49 +8,58 @@
     <style>
         table{
             border: 1px solid black;
-            margin-top: 10px;
         }
 
         input{
             font: normal 15pt arial;
         }
+        
         tr, td, th{
             border: 1px solid black;
             text-align: center;
             background: rgba(0, 64, 255, 0.374);
         }
 
-        div{
+        .container{
             display: flex;
             align-items: center;
             font: normal 15pt arial;
             flex-direction:column;
         }
+        .tabela{
+            margin-top: 10px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <div>
+    <div class="container">
         <input type="number" id="numero">
         <input type="button" value="Verificar" id="verificar">
-        <span></span>
-        <table>
-            <tr>
-                <th>Antecessor</th>
-                <th>Sucessor</th>
-                <th>Dobro</th>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
+        
+
+        <div class="tabela">
+            <span></span>
+            <table>
+                <tr>
+                    <th>Antecessor</th>
+                    <th>Sucessor</th>
+                    <th>Dobro</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
     </div>
     <script>
         var antecessor = window.document.getElementsByTagName('td')[0]
         var sucessor = window.document.getElementsByTagName('td')[1]
         var dobro = window.document.getElementsByTagName('td')[2]
 
+        var verificando = window.document.getElementsByTagName('span')[0]
 
         var numero = window.document.getElementById('numero')
         var verificar = window.document.getElementById('verificar')
@@ -60,6 +69,7 @@
             antecessor.innerText = Number(numero.value) - 1
             sucessor.innerText = Number(numero.value) + 1
             dobro.innerText = Number(numero.value) * 2
+            verificando.innerText = 'Verificando o numero ' + numero.value
         }
     </script>
 </body>

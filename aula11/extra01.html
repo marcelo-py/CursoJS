@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antecessor e Sucessor</title>
+    <style>
+        table{
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+
+        input{
+            font: normal 15pt arial;
+        }
+        tr, td, th{
+            border: 1px solid black;
+            text-align: center;
+            background: rgba(0, 64, 255, 0.374);
+        }
+
+        div{
+            display: flex;
+            align-items: center;
+            font: normal 15pt arial;
+            flex-direction:column;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="number" id="numero">
+        <input type="button" value="Verificar" id="verificar">
+        <span></span>
+        <table>
+            <tr>
+                <th>Antecessor</th>
+                <th>Sucessor</th>
+                <th>Dobro</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var antecessor = window.document.getElementsByTagName('td')[0]
+        var sucessor = window.document.getElementsByTagName('td')[1]
+        var dobro = window.document.getElementsByTagName('td')[2]
+
+
+        var numero = window.document.getElementById('numero')
+        var verificar = window.document.getElementById('verificar')
+        verificar.addEventListener('click', verificador)
+
+        function verificador() {
+            antecessor.innerText = Number(numero.value) - 1
+            sucessor.innerText = Number(numero.value) + 1
+            dobro.innerText = Number(numero.value) * 2
+        }
+    </script>
+</body>
+</html>

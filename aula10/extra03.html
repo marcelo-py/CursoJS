@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluguel de Carros</title>
+    <style>
+        span{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <span>
+        <label for="ndias">Quantos dias alugados? </label>
+        <input type="number" id="ndias">
+    </span>
+    
+    <span>
+        <label for="qntkm">Quantos Km rodados? </label>
+        <input type="number" id="qntkm">
+    </span>
+    <button id="calcular" onclick="calcular()">CALCULAR</button>
+    <div></div>
+
+    <script>
+        var ndias = window.document.getElementById('ndias')
+        var qntkm = window.document.getElementById('qntkm')
+        var btncal = window.document.querySelector('button#calcular')
+
+        var tot = window.document.getElementsByTagName('div')[0]
+        
+        function calcular() {
+            var vtotal = (Number(ndias.value) * 60) + (Number(qntkm.value) * 0.15)
+            tot.innerHTML = `Total a pagar é de: ${vtotal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`
+        }
+    </script>
+</body>
+</html>

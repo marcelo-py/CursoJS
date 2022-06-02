@@ -51,8 +51,8 @@
         function analizar() {
             var área = Number(largura.value) * Number(altura.value)
             var quantli = área/2
-            res[0].innerHTML = `Sua parede tem uma dimensão de <strong>${largura.value}x${altura.value}²</strong> e sua área é de <strong>${área}m²</strong>`
-            res[1].innerHTML = `Para pintar essa parede você vai precisar de <strong>${quantli}l</strong> de tinta`
+            res[0].innerHTML = `Sua parede tem uma dimensão de <strong>${Number(largura.value).toFixed(3)}x${Number(altura.value).toFixed(3)}²</strong> e sua área é de <strong>${área.toFixed(3)}m²</strong>`
+            res[1].innerHTML = `Para pintar essa parede você vai precisar de <strong>${quantli.toFixed(2)}l</strong> de tinta`
         }
     </script>
 </body>

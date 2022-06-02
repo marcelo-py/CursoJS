@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintando a parede</title>
+    <style>
+        body{
+            font: normal 14pt Courier;
+        }
+
+        label{
+            font-family: 'Courier New';
+        }
+
+        div{
+            color: #ff6200;
+        }
+
+        span{
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <em>Considere que cada litro de tinta pinta somente 2m²</em>
+    <span>
+        <label for="largura">Largura da parede</label>
+        <input type="number" id="largura">
+    </span>
+    
+    <span>
+        <label for="altura">Altura da parede</label>
+        <input type="number" id="altura">
+    </span>
+    
+
+    <button onclick="analizar()">VERIFICAR</button>
+
+    <div></div>
+    <div></div>
+    
+    <script>
+        var largura = window.document.getElementById('largura')
+        var altura = window.document.getElementById('altura')
+
+        var res = window.document.getElementsByTagName('div')
+        
+        //cada litro de tinta pinta uma parede de 2m²
+
+        function analizar() {
+            var área = Number(largura.value) * Number(altura.value)
+            var quantli = área/2
+            res[0].innerHTML = `Sua parede tem uma dimensão de <strong>${largura.value}x${altura.value}²</strong> e sua área é de <strong>${área}m²</strong>`
+            res[1].innerHTML = `Para pintar essa parede você vai precisar de <strong>${quantli}l</strong> de tinta`
+        }
+    </script>
+</body>
+</html>

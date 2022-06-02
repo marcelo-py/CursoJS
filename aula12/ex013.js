@@ -17,7 +17,6 @@ switch (diaSem) {
     case 0:
         console.log('Domingo')
         break
-
     case 1:
         console.log('Segunda-Feira')
         break
@@ -37,6 +36,6 @@ switch (diaSem) {
         console.log('Sábado')
         break
     default:
-        
-
+        console.log('Algo deu errado!')
+        break
 }

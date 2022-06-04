@@ -11,9 +11,9 @@ var diaSem = agora.getDay()
     6 = Sábado
 */
 
-console.log(diaSem)
-
-switch (diaSem) {
+//console.log(diaSem)
+var dia = 5
+switch (dia) {
     case 0:
         console.log('Domingo')
         break

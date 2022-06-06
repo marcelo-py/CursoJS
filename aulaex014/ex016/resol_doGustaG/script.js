@@ -17,10 +17,12 @@ function contar() {
             p = 1
         }
         if (i < f) {
+            //crescente
             for (let c = i; c <= f; c += p) {
             res.innerHTML += `${c} \u{1F449}`
             }
         } else {
+            //decrescente
             for (let c = i; c >= f; c -= p)
             res.innerHTML += `${c} \u{1F449}`
         }

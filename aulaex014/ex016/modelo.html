@@ -12,11 +12,24 @@
         <h1>Titulo</h1>
     </header>
     <section>
-        <div id="msg">
+        <div id="contagem">
+            <div>
+                <label for="contarde">Contar de: </label>
+                <input type="number" id="contarde">
+            </div>
+            <div>
+                <label for="atenumero">Até: </label>
+                <input type="number" id="atenumero">
+            </div>
+            <div>
+                <label for="passo">Passo</label>
+                <input type="number" id="passo">
+            </div>
         </div>
-        <div id="imagemcontainer">
+        <div id="res">
             
         </div>
+        <button onclick="contar()">Contar</button>
     </section>
     <footer>
         <p>&copy; Marcelo</p>

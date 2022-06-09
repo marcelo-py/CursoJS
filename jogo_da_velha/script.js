@@ -1,13 +1,23 @@
-var caixas = document.getElementsByTagName('input')
+var caixas = document.getElementsByTagName('button')
 var container = document.getElementsByTagName('div')[1]
 
 var marcados = []
 
 for (let c = 0; c<caixas.length; c++) {
-    caixas[c].addEventListener('change', caixa)
+    caixas[c].addEventListener('click', caixa)
+    caixas[c].setAttribute('value', c)
 }
 
 function caixa() {
-    marcados.push(this.value)
-    container.innerHTML = marcados[marcados.length-1]
+
+    if (this.innerHTML.length == 0) {
+        if (marcados.length == 0 || marcados[marcados.length - 1] == 'O') {
+        marcados.push('X')
+        this.innerHTML = 'X'
+        } else {
+            marcados.push('O')
+            this.innerHTML = 'O'
+        }
+        container.innerHTML = marcados
+    }
 }

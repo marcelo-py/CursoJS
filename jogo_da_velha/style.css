@@ -10,7 +10,7 @@ input {
     font-weight: bold;
     border: 2px solid black;
     border-top: none;
-    margin-left: -4px;
+    margin-left: -4.5px;
 }
 input:nth-child(3n+1){
     border-left: none;

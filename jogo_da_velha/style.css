@@ -9,5 +9,22 @@ input {
     font-size: 20px;
     font-weight: bold;
     border: 2px solid black;
-    margin-top: 1px;
+    border-top: none;
+    margin-left: -4px;
+}
+input:nth-child(3n+1){
+    border-left: none;
+}
+
+input:nth-child(n+7) {
+    border-bottom: none;
+}
+input:nth-child(3) {
+    border-right: none;
+}
+input:nth-child(6) {
+    border-right: none;
+}
+input:nth-child(9) {
+    border-right: none;
 }

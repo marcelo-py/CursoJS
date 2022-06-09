@@ -9,5 +9,5 @@ for (let c = 0; c<caixas.length; c++) {
 
 function caixa() {
     marcados.push(this.value)
-    container.innerHTML = marcados
+    container.innerHTML = marcados[marcados.length-1]
 }

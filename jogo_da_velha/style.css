@@ -1,5 +1,5 @@
 div {
-    width: 150px;
+    width: 140px;
     margin: auto;
 }
 button {
@@ -7,7 +7,7 @@ button {
     height: 40px;
     border: 2px solid black;
     border-top: none;
-    margin-left: -5px;
+    margin-left: -6px;
 }
 button:nth-child(3n+1){
     border-left: none;

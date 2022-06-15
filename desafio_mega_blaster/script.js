@@ -19,6 +19,13 @@ function addnumero() {
 
 let div_result = document.createElement('div') //Precisa ser criado aqui senão vai ficar criando um novo sempre q a função ser chamada
 
+function zerar() {
+    numeros = []
+    list_numero.innerHTML = ''
+    let log = document.getElementsByTagName('div')[1]
+    log.innerHTML = ''
+}
+
 function finalizar() {
     let maior = 0
     let menor = 0

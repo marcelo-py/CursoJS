@@ -2,6 +2,8 @@ var numero = document.getElementsByTagName('input')[0]
 var list_numero = document.querySelector('select')
 var principal = document.querySelector('main')
 var numeros = []
+
+
 function addnumero() {
     
     let novo_elemento = document.createElement('option')
@@ -15,13 +17,13 @@ function addnumero() {
     list_numero.appendChild(novo_elemento)
 }
 
+let div_result = document.createElement('div') //Precisa ser criado aqui senão vai ficar criando um novo sempre q a função ser chamada
 
 function finalizar() {
     let maior = 0
     let menor = 0
     let soma = 0
-    let div_result = document.createElement('div')
-    principal.appendChild(div_result)
+    
     for (let n = 0; n < numeros.length; n++) {
         if (n==0) {
             maior, menor = numeros[n]
@@ -35,9 +37,11 @@ function finalizar() {
         }
         soma += Number(numeros[n])
     }
+
     let media = soma/numeros.length
     div_result.innerHTML = `O maior numero é ${maior}<br>`
     div_result.innerHTML += `O menor numero é ${menor}<br>`
     div_result.innerHTML += `A soma de todos os Números é: ${soma}<br>`
-    div_result.innerHTML += `A média de todos os valores é: ${media}` 
+    div_result.innerHTML += `A média de todos os valores é: ${media}`
+    principal.appendChild(div_result)
 }

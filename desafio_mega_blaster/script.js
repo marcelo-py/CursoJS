@@ -18,18 +18,26 @@ function addnumero() {
 
 function finalizar() {
     let maior = 0
+    let menor = 0
     let soma = 0
-    
     let div_result = document.createElement('div')
-    for (n in numeros) {
-        if (Number(numeros[n] > maior)) {
-            maior = Number(numeros[n])
+    principal.appendChild(div_result)
+    for (let n = 0; n < numeros.length; n++) {
+        if (n==0) {
+            maior, menor = numeros[n]
+        } else {
+            if (Number(numeros[n]) > maior) {
+                maior = Number(numeros[n])
+            }
+            if (Number(numeros[n]) < menor) {
+                menor = Number(numeros[n])
+            }
         }
         soma += Number(numeros[n])
     }
     let media = soma/numeros.length
     div_result.innerHTML = `O maior numero é ${maior}<br>`
+    div_result.innerHTML += `O menor numero é ${menor}<br>`
     div_result.innerHTML += `A soma de todos os Números é: ${soma}<br>`
     div_result.innerHTML += `A média de todos os valores é: ${media}` 
-    principal.appendChild(div_result)
 }

@@ -1,0 +1,90 @@
+* {
+    font-family: Muli, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-image: linear-gradient(to bottom, #70f721, #acd292, #ffffff);
+    background-repeat: no-repeat;
+    background-size: 100% 120%;
+    padding: 5px;
+}
+#header img{
+    max-width: 100px;
+}
+.main {
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    margin: 50px 0;
+}
+
+.main div {
+    text-align: center;
+    margin: 10px;
+}
+
+.main div h1{
+    font-size: 35pt;
+}
+.main div p{
+    font-size: 15pt;
+}
+.main button{
+    color: aliceblue;
+    background: #000000b1;
+    font-size: 15pt;
+    width: 200px;
+    padding: 10px;
+    border-radius: 25px;
+    margin: auto;
+    font-weight: bold;
+    cursor:pointer;
+}
+.tabela-precos{
+    text-align: center;
+}
+.tabela-precos h1{
+    font-size: 22pt;
+    color: #ff3030;
+}
+.planos {
+    display: inline-block;
+    width: 350px;
+    background: #15a7a977;
+    padding: 20px;
+    margin-top: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.355);
+}
+
+.planos:hover{
+    padding: 27px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.planos h2{
+    font-size: 30pt;
+}
+.planos h3{
+    color: #ff3030;
+}
+.planos #detalhe{
+    color: #000000b1;
+}
+
+.planos ul{
+    margin-top: 15px;
+}
+.planos li {
+    color: #ff0000;
+    list-style: none;
+    font-size: 13pt;
+}
+
+
+#footer table{
+    text-align:left;
+    margin-left: 20px;
+}

@@ -27,7 +27,7 @@ body {
 }
 
 .main div h1{
-    font-size: 35pt;
+    font-size: 31pt;
 }
 .main div p{
     font-size: 15pt;
@@ -76,6 +76,7 @@ body {
 
 .planos ul{
     margin-top: 15px;
+    text-align: left;
 }
 .planos li {
     color: #ff0000;

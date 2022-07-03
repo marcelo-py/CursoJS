@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try catch</title>
+</head>
+<body>
+    <div id="res"></div>
+    <script>
+        var n1 = document.createElement('input')
+        var n2 = document.createElement('input')
+        n1.type = 'number'
+        n2.type = 'number'
+        document.body.appendChild(n1)
+        document.write('<strong> / </strong>')
+        document.body.appendChild(n2)
+        document.write('<button onclick="calcular()">CALCULAR</button>')
+        res = document.querySelector('#res')
+        res.style.height = '50px'
+        res.style.background = '#97f1f9'
+
+        function calcular() {
+            try {
+                if (n1.value == 0 || n2.value==0){
+                    throw new Error('Nennhum valor pode ser zero na divisão!')
+                }
+                res.innerHTML = n1.value/n2.value
+                
+            } catch (execao) {
+                res.innerHTML = execao
+            }
+        }
+    </script>
+</body>
+</html>

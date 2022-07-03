@@ -18,16 +18,17 @@
         document.body.appendChild(n2)
         document.write('<button onclick="calcular()">CALCULAR</button>')
         res = document.querySelector('#res')
-        res.style.height = '50px'
+        res.style.height = '40px'
         res.style.background = '#97f1f9'
-
+        document.body.style.padding = '0'
+        document.body.style.margin = '0'
         function calcular() {
             try {
                 if (n1.value == 0 || n2.value==0){
                     throw new Error('Nennhum valor pode ser zero na divisão!')
                 }
-                res.innerHTML = n1.value/n2.value
-                
+                res.innerHTML = `<h2>${n1.value/n2.value}</h2>`
+
             } catch (execao) {
                 res.innerHTML = execao
             }

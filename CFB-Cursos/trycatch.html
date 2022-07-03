@@ -14,16 +14,19 @@
         try {
             num = window.prompt('digite um número <= 10')
             if (num > 10){
-                throw new Error('Número inválido!')
+                throw new Error('Número inválido!') //Força um erro e passa pro catch com a string pra exeção
+
             }
-            document.write(`você digitou o número ${num}`)
+            
+            document.write(`você digitou o número ${num}`) // Se o erro ocorrer não exacuta essa parte, passa logo pro catch
             
         } catch (execao) {
             document.write(`ERRO: ${execao.message}`)
+
         }finally{
             document.write('<br><br><br>Encerrado o programa')
         }
-        
+
     </script>
 </body>
 </html>

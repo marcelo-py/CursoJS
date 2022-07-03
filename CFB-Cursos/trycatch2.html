@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Catch</title>
+</head>
+<body>
+    <script>
+        var caixa = document.createElement('input')
+        var adi = document.createElement('button')
+        adi.innerHTML = 'ADICIONAR'
+        document.body.appendChild(caixa)
+        document.body.appendChild(adi)
+
+        adi.addEventListener('click', adicionar)
+
+        function adicionar(){
+            try{
+                if (caixa.value.length < 1) {
+                    throw new Error('Não pode ficar vazio')
+                }
+            } catch (execao){
+                alert(execao)
+            }
+            let div = document.createElement('div')
+            div.innerHTML = caixa.value
+            document.body.appendChild(div)
+        }
+    </script>
+</body>
+</html>

@@ -7,10 +7,28 @@
     <title>Separando digitos</title>
 </head>
 <body>
-    <input type="text">
-
+    <div id="res"></div>
+    <input id="entrada" type="number">
+    <button>ANALIZAR</button>
     <script>
-
+        var res = document.getElementById('res')
+        var entrada = document.getElementById('entrada')
+        var btn = document.getElementsByTagName('button')[0]
+        
+        btn.addEventListener('click', analizar)
+        
+        function analizar() {
+            var uni, dez, cent, mil
+            uni = entrada.value[entrada.value.length-1]
+            dez = entrada.value[entrada.value.length-2]==undefined? '0': entrada.value[entrada.value.length-2]
+            cent = entrada.value[entrada.value.length-3]==undefined? '0': entrada.value[entrada.value.length-3]
+            mil = entrada.value[entrada.value.length-4]==undefined? '0': entrada.value[entrada.value.length-4]
+            res.innerHTML = `Número analizado
+            <h4>unidades: ${uni}</h4> 
+            <h4>dezenas: ${dez}</h4> 
+            <h4>centenas: ${cent}</h4>
+            <h4>milhares: ${mil}</h4>`
+        }
     </script>
 </body>
 </html>

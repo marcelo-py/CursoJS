@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Manipulation</title>
+</head>
+<body>
+    <form name="formname" id="idform1" action="#" method="get">
+        <label for="nome">Nome:</label>
+        <input id="nome" type="text" value="marcelo">
+        <label for="sobrenome">Sobrenome:</label>
+        <input id="sobrenome" type="text" value="Araujo">
+        <button onclick="enviar()">ENVIAR</button>
+    </form>
+    <div id="res">
+
+    </div>
+
+    <script>
+        var formulario = document.forms[0]
+        var res = document.querySelector('#res')
+
+        function enviar(){
+            var hora = new Date().getHours()
+            var min = new Date().getMinutes()
+            res.innerHTML = `Seu nome é <h3 style="display: inline;"> ${formulario.elements.item('nome').value} </h3>
+            e o Sobrenome é <h4 style="display: inline"> ${formulario.elements.namedItem('sobrenome').value} <h4> <p>dados coletado as ${hora} horas e ${min} minutos </p>`
+        }
+    </script>
+</body>
+</html>

@@ -21,12 +21,14 @@
     <script>
         var formulario = document.forms[0]
         var res = document.querySelector('#res')
-
+        var dados = []
         function enviar(){
             var hora = new Date().getHours()
             var min = new Date().getMinutes()
             res.innerHTML = `Seu nome é <h3 style="display: inline;"> ${formulario.elements.item('nome').value} </h3>
             e o Sobrenome é <h4 style="display: inline"> ${formulario.elements.namedItem('sobrenome').value} <h4> <p>dados coletado as ${hora} horas e ${min} minutos </p>`
+            dados.push([formulario.elements.item('nome').value, formulario.elements.namedItem('sobrenome').value])
+            res.innerHTML += `<p>dados atuais ${dados}</p>`
         }
     </script>
 </body>

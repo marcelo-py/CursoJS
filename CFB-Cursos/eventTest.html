@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #caixa{
+            width: 100px;
+            height: 100px;
+            background: #ff0000;
+            border: 3px solid;
+        }
+        button{
+            font: 20pt arial ;
+        }
+    </style>
+
+    <script>
+        
+        function mudapos(obj){
+            obj.style.position = 'absolute'
+            obj.style.top = Math.random()*86+'%'
+            obj.style.left = Math.random()*86+'%'
+        }
+    </script>
+</head>
+<body>
+    <div id="caixa" onmouseover="mudapos(this)"></div>
+    
+</body>
+</html>

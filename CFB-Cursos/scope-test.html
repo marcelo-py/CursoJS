@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var nomeCor = 'Vermelho'
+        function cor(){
+            var nomeCor = 'Azul' //essa variavel é  diferente da variavel raiz
+            //nomeCor = 'Azul'   - essa seria a mesma variavel raiz setando uma novo valor a ela pela função
+            //O Var distingue a duas
+            document.write(this.nomeCor, nomeCor) //o this.nomeCor acessa a variavel raiz (de fora da função)
+            // Não é recomendado fazer isso
+        }
+        var c
+        for(c=0; c<10; c++){}
+
+        document.write(c)
+        cor()
+    </script>
+</body>
+</html>

@@ -5,11 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #caixa{
+            width: 250px;
+            height: 200px;
+            border: 3px solid;
+        }
+    </style>
     <script>
-        
+        var cores = ['#fff700', '#46ff35', '#00bbff', '#1723ff', '#d400ff', 'chocolate', 'rgb(210, 30, 111)']
+        function corSairMouse(){
+            var cx = document.getElementById('caixa')
+            cx.style.background = 'red'
+        }
+        function corEntrarMouse(){
+            var cx = document.getElementById('caixa')
+            cx.style.background = 'Green'
+        }
+        function addEventos(){
+            var cx = document.getElementById('caixa')
+            var btn = document.getElementsByTagName('button')[0]
+            cx.addEventListener('mouseover', corEntrarMouse)
+            cx.addEventListener('mouseout', corSairMouse)
+            btn.addEventListener('mousemove', function cA(){
+                cx.style.background = cores[Math.round(Math.random()*4)]
+            })
+        }
+        window.addEventListener('load', addEventos)
     </script>
 </head>
 <body>
-    <!--Uma Função para cada cor e evento-->
+    <div on id="caixa"></div>
+    <button>Mudar Cor(aleatorio)</button>
 </body>
 </html>

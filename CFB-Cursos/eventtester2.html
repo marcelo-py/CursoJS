@@ -12,19 +12,24 @@
             background: red;
             border: 2px solid;
         }
+        button{
+            font: 20pt arial;
+            background: yellowgreen;
+            position: relative;
+        }
     </style>
 
     <script>
         function mover(){
             var caixa = document.getElementById('caixa')
             caixa.style.position = 'absolute'
-            caixa.style.top = Math.random()*500+'px'
-            caixa.style.right = Math.random()*500+'px'
+            caixa.style.top = Math.random()*85+'%'
+            caixa.style.right = Math.random()*85+'%'
         }
 
         function addEventos(){
             var btn = document.getElementsByTagName('button')[0]
-            btn.addEventListener("click", mover)
+            btn.addEventListener("mouseclick", mover)
         }
         window.addEventListener("load", addEventos)
 

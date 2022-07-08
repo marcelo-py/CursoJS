@@ -53,8 +53,10 @@
             }else{
                 pausado = true
                 document.removeEventListener('keydown', move)
-                
+                caixa.style.background = 'none'
+                caixa.innerHTML = 'Clique para voltar a jogar'
                 alert('O jogo está pausado! Clik na caixa para jogar')
+
             }
         }
         function addEvento(){

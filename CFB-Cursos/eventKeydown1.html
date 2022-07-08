@@ -23,8 +23,8 @@
         var x = 0
         var y = 0
         /*Seta-esquerda=37; Seta-cima=38; Seta-direita=39; Seta-baixo=40*/
-        function move(){
-            var pega_tecla = event.keyCode
+        function move(evento){
+            var pega_tecla = evento.keyCode
             var caixa = document.getElementById('div1')
             if (pega_tecla == 37){
                 x-=10

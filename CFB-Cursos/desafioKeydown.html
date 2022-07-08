@@ -5,10 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio do Keydown</title>
+    <style>
+        
+        #div1{
+            width: 150px;
+            height: 150px;
+            border: 2px solid;
+            position: absolute;
+        }
+    </style>
+    <script>
+        var px = 0
+        var py = 0
+        function move(event){
+            tecla = event.keyCode
+            var caixa = document.getElementById('div1')
+            switch (tecla){
+                case 37:
+                    px -= 10
+                    caixa.style.left = px+'px'
+                    break
+                case 38:
+                    py -= 10
+                    caixa.style.top = py+'px'
+                    break
+                case 39:
+                    px += 10
+                    caixa.style.left = px+'px'
+                    break
+                case 40:
+                    py += 10
+                    caixa.style.top = py+'px'
+            }
+        }
+        
+        var pausado = true
+        function onPause(){
+            
+            var caixa = document.getElementById('div1')
+            if (pausado){
+                pausado = false
+                document.addEventListener('keydown', move)
+                caixa.style.background = 'red'
+                caixa.innerHTML = 'Jogue!'
+                caixa.style.textAlign = 'center'
+                alert('Em jogo!')
+            }else{
+                pausado = true
+                document.removeEventListener('keydown', move)
+                
+                alert('O jogo está pausado! Clik na caixa para jogar')
+            }
+        }
+        function addEvento(){
+            var caixa = document.getElementById('div1')
+            caixa.addEventListener('click', onPause)
+        }
+        window.addEventListener('load', addEvento)
+    </script>
 </head>
 <body>
-    <div>
-        
+    <div id="div1">
+
     </div>
 </body>
 </html>

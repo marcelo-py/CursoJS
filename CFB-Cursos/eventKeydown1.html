@@ -13,8 +13,10 @@
         #div1{
             width: 100px;
             height: 100px;
-            position: absolute;
+            position: relative;
             background: red;
+            left: 0px;
+            top: 0px;
         }
     </style>
     <script>
@@ -34,11 +36,11 @@
 
             } else if(pega_tecla == 39){
                 x+=10
-                caixa.style.right = x+"px"
+                caixa.style.left = x+"px"
 
             } else if(pega_tecla == 40){
                 y+=10
-                caixa.style.border = y+"px"
+                caixa.style.top = y+"px"
             } else if (pega_tecla == 13){
                 alert('Jogo Pausado!')
                 document.removeEventListener('keydown', move) // Ou this.addEventListener já que é pra dicionar o evento nesse documento

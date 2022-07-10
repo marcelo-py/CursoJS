@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            border: solid;
+        }
+    </style>
+    <script>
+        var cont = 1
+        var tempo
+        
+        function mudaCor(){
+            var r = Math.floor(Math.random()*255)
+            var g = Math.floor(Math.random()*255)
+            var b = Math.floor(Math.random()*255)
+            var div = document.getElementById('div1')
+            div.innerHTML = `<h1 style="text-align: center; margin: auto;">${cont}</h1>`
+            div.style.background = `rgb(${r}, ${g}, ${b})`
+            cont += 1
+            
+        }
+        var chamada = 0
+        function iniciar(){
+            if (chamada != 1){
+                tempo = setInterval(mudaCor, 1000)
+            }
+            
+            chamada = 1
+        }
+        function parar(){
+            tempo = clearInterval(tempo)
+        }
+        function addEventos(){
+            var btn_iniciar = document.getElementsByTagName('button')[0]
+            var btn_parar = document.getElementsByTagName('button')[1]
+            btn_iniciar.addEventListener('click', iniciar)
+            btn_parar.addEventListener('click', parar)
+        }
+        window.addEventListener('load', addEventos)
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <button>Iniciar</button>
+    <button>Parar</button>
+</body>
+</html>

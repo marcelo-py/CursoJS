@@ -30,10 +30,12 @@
             py = 0
             vel = 5
             obj = document.getElementById('div1')
-            tmp = setInterval(enterFrame, 10)
+            tmp = setInterval(enterFrame, 10)//aqui ele ta rodnado o tempo todo, mas como dx e dy fica tudo em 0 qunaod não precionados então n tem oq mostrar
             document.addEventListener('keydown', teclaPress)
             document.addEventListener('keyup', teclaSolta)      
         }
+
+        //quando precionado o set interval que ja tem o interframe rodadno vai pode mostrar alguma coisa em sua velocidade  que foi passada
         function teclaPress(){
             var tecla = event.keyCode
             if (tecla == 37){

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div{
+            max-width: 900px;
+            height: 600px;
+            background-image: url('computador.png');
+            background-size: 100%;
+        }
+
+        .div > div{
+            width: 397px;
+            height: 224px;
+            background-color: tomato;
+            position: relative;
+            top: 67px;
+            left: 153px;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        #bloco{
+            width: 30px;
+            height: 30px;
+            background: greenyellow;
+            position: absolute;
+        }
+        .play{
+            position: absolute;
+            top: 47%;
+            left: 45%;
+            font-size: 14pt;
+            background: rgb(218, 106, 106);
+            outline: none;
+            cursor:pointer;
+        }
+    </style>
+    <script>
+        var px
+        var py
+        var dx
+        var dy
+        var vel
+        var obj
+        var tempo_animacao
+        var btn_inicar
+        function iniciar_tudo() {
+            px = 0
+            py = 0
+            dx = 0
+            dy = 0
+            vel = 2
+
+            obj = document.getElementById('bloco')
+            
+            document.addEventListener('keydown', teclaPress)
+            document.addEventListener('keyup', teclaSolta)
+
+            btn_inicar = document.querySelector('.play')
+            btn_inicar.addEventListener('click', play)
+        }
+
+        var pause = true
+        function play(){
+            if (pause){
+                tempo_animacao = setInterval(movimento, 2)
+                pause = false
+                btn_inicar.style.top = 0
+                btn_inicar.innerHTML = 'pause'
+                btn_inicar.style.opacity = 0.7
+            } else{
+                pause = true
+                clearInterval(tempo_animacao)
+                btn_inicar.innerHTML = 'Play'
+                btn_inicar.style.top = '47%'
+                btn_inicar.style.opacity = 1
+            }
+            
+        }
+        function teclaPress(){
+            switch (event.keyCode){
+                case 37:
+                    dx = -1
+                    break
+                case 38:
+                    dy = -1
+                    break
+                case 39:
+                    dx = 1
+                    break
+                case 40:
+                    dy = 1
+                    break
+            }
+        }
+
+        function teclaSolta(){
+            switch (event.keyCode){
+                case 37:
+                    dx = 0
+                    break
+                case 38:
+                    dy = 0
+                    break
+                case 39:
+                    dx = 0
+                    break
+                case 40:
+                    dy = 0
+                    break
+            }
+        }
+        function movimento(){
+            px += dx*vel
+            py += dy*vel
+            obj.style.left = px+'px'
+            obj.style.top = py+'px'
+        }
+        window.addEventListener('load', iniciar_tudo)
+    </script>
+</head>
+<body>
+    <div class="div">
+        <div>
+            <div id="bloco"></div>
+            <button class="play">Play</button>
+        </div>
+    </div>
+</body>
+</html>

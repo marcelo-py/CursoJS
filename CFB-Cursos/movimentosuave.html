@@ -26,11 +26,11 @@
         function iniciar() {
             dx = 0
             dy = 0
-            px = 
+            px = 0
             py = 0
-            vel = 5
+            vel = 10
             obj = document.getElementById('div1')
-            tmp = setInterval(enterFrame, 10)//aqui ele ta rodnado o tempo todo, mas como dx e dy fica tudo em 0 qunaod não precionados então n tem oq mostrar
+            tmp = setInterval(enterFrame, 1)//aqui ele ta rodnado o tempo todo, mas como dx e dy fica tudo em 0 qunaod não precionados então n tem oq mostrar
             document.addEventListener('keydown', teclaPress)
             document.addEventListener('keyup', teclaSolta)      
         }
